@@ -1,7 +1,7 @@
 {
   "name": "truckersmp/steam-api",
   "description": "A steam-api client for Laravel 5. - TruckersMP",
-  "version": "2.0.16",
+  "version": "2.0.16.2",
   "license": "MIT",
   "authors": [
     {

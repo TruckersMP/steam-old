@@ -200,7 +200,7 @@ class Client
 
         // If we have a version, add it
         if ($version) {
-            return $url . '/' . $this->version . '/';
+            return $url . $this->version . '/';
         }
 
         return $url;
