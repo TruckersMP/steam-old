@@ -1,0 +1,36 @@
+{
+  "name": "syntax/steam-api",
+  "description": "A steam-api client for Laravel 5.",
+  "version": "2.0.16",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Stygian",
+      "email": "stygian.warlock.v2@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "laravel/framework": "^5.0",
+    "guzzlehttp/guzzle": "^6.0",
+    "nukacode/database": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~3.0",
+    "mockery/mockery": "0.9.3",
+    "orchestra/testbench": "~3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Syntax\\SteamApi\\": "src/Syntax/SteamApi"
+    }
+  },
+   "extra": {
+       "laravel": {
+           "providers": [
+               "Syntax\\SteamApi\\SteamApiServiceProvider"
+           ]
+       }
+   },
+  "minimum-stability": "stable"
+}
