@@ -22,7 +22,7 @@ matrix:
 before_script:
   - composer install
 
-script:
-  - phpunit --coverage-clover=coverage.clover
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload  --format=php-clover coverage.clover
+#script:
+#  - phpunit --coverage-clover=coverage.clover
+#  - wget https://scrutinizer-ci.com/ocular.phar
+#  - php ocular.phar code-coverage:upload  --format=php-clover coverage.clover

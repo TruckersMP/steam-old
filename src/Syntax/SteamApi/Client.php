@@ -9,6 +9,7 @@ use Exception;
 use GuzzleHttp\Exception\ClientErrorResponseException;
 use GuzzleHttp\Exception\ServerErrorResponseException;
 use Syntax\SteamApi\Exceptions\ApiCallFailedException;
+use Syntax\SteamApi\Exceptions\ApiErrorException;
 use Syntax\SteamApi\Exceptions\ClassNotFoundException;
 
 /**
@@ -181,6 +182,11 @@ class Client
             $result       = new stdClass();
             $result->code = $response->getStatusCode();
             $result->body = json_decode($response->getBody(true));
+
+            $xeResult = (int)$request->getHeader('X-eresult');
+            if ($xeResult !== 1) {
+                throw new ApiErrorException($xeResult);
+            }
         } catch (ClientErrorResponseException $e) {
             throw new ApiCallFailedException($e->getMessage(), $e->getResponse()->getStatusCode(), $e);
         } catch (ServerErrorResponseException $e) {
