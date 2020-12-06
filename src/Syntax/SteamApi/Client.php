@@ -183,8 +183,8 @@ class Client
             $result->code = $response->getStatusCode();
             $result->body = json_decode($response->getBody(true));
 
-            $xeResult = (int)$request->getHeader('X-eresult');
-            if ($xeResult !== 1) {
+            $xeResult = (int)$response->getHeader('X-eresult');
+            if ($xeResult && $xeResult !== 1) {
                 throw new ApiErrorException($xeResult);
             }
         } catch (ClientErrorResponseException $e) {

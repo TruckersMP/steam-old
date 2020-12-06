@@ -120,6 +120,10 @@ class ApiErrorException extends \Exception
             108 => "There are too many of this thing pending already",
         ];
 
-        parent::__construct($errorMessages[$code], $code, $previous);
+        $message = "Unknown exception.";
+        if (array_key_exists($code, $errorMessages)) {
+            $message = $errorMessages[$code];
+        }
+        parent::__construct($message, $code, $previous);
     }
 }
